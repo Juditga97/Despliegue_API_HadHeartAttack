@@ -7,6 +7,17 @@ model_path = os.path.join(BASE_DIR, "heart_attack_model_01.pkl")
 
 model = None
 
+# orden correcto de columnas
+columns = [
+"State","Sex","GeneralHealth","PhysicalHealthDays","MentalHealthDays",
+"LastCheckupTime","PhysicalActivities","SleepHours","RemovedTeeth",
+"HadAngina","HadStroke","HadCOPD","HadDiabetes","HadKidneyDisease",
+"HadArthritis","HadSkinCancer","AlcoholDrinkers","SmokerStatus",
+"DifficultyWalking","DifficultyDressingBathing","DifficultyErrands",
+"DeafOrHardOfHearing","BlindOrVisionDifficulty","DifficultyConcentrating",
+"AgeCategory","WeightInKilograms","CovidPos","ChestScan","PneumoVaxEver"
+]
+
 def predict(features: dict):
 
     global model
@@ -15,6 +26,9 @@ def predict(features: dict):
         model = joblib.load(model_path)
 
     df = pd.DataFrame([features])
+
+    # asegurar orden correcto
+    df = df[columns]
 
     prediction = model.predict(df)
 
