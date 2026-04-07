@@ -7,9 +7,9 @@ app = Flask (__name__) #Inicializamos la API
 def home():
     return {
         "mensaje": "API de prediccion de ataque cardiaco",
+        "descripcion": "Esta API recibe datos de salud de un paciente y devuelve una predicción de riesgo de ataque cardíaco usando un modelo de Machine Learning",
         "endpoint": "/predict",
-        "metodo": "POST",
-        "descripcion": "Envia los datos de salud de un paciente en formato JSON para obtener una prediccion"
+        "metodo": "POST"
     }
 
 @app.route("/predict", methods=["POST"])
