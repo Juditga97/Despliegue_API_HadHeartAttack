@@ -15,25 +15,43 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict_endpoint():
 
-    try:
-        data = request.get_json() #Recibimos los datos
+    data = request.get_json()
 
-        if not data:
-            return jsonify({"error": "No hay data disponible"}), 400
+    if not data:
+        data = {
+            "Sex": "Male",
+            "AgeCategory": "Age 60-64",
+            "GeneralHealth": "Good",
+            "PhysicalHealthDays": 0,
+            "MentalHealthDays": 0,
+            "LastCheckupTime": "Within past year",
+            "PhysicalActivities": "Yes",
+            "SleepHours": 7,
+            "RemovedTeeth": "None",
+            "HadAngina": "No",
+            "HadStroke": "No",
+            "HadCOPD": "No",
+            "HadDiabetes": "No",
+            "HadKidneyDisease": "No",
+            "HadArthritis": "No",
+            "HadSkinCancer": "No",
+            "AlcoholDrinkers": "Yes",
+            "SmokerStatus": "Never smoked",
+            "DifficultyWalking": "No",
+            "DifficultyDressingBathing": "No",
+            "DifficultyErrands": "No",
+            "DeafOrHardOfHearing": "No",
+            "BlindOrVisionDifficulty": "No",
+            "DifficultyConcentrating": "No",
+            "WeightInKilograms": 80,
+            "CovidPos": "No",
+            "ChestScan": "No",
+            "PneumoVaxEver": "Yes",
+            "State": "California"
+        }
 
-        result = predict(data)
+    result = predict(data)
 
-        return jsonify({
-            "prediction": result
-        })
-
-    except Exception as e:
-        return jsonify({
-            "error": str(e)
-        })
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
-
+    return jsonify({
+        "prediction": result
+    })
