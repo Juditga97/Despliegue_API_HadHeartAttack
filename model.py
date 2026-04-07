@@ -5,10 +5,14 @@ import os
 BASE_DIR = os.path.dirname(__file__)
 model_path = os.path.join(BASE_DIR, "heart_attack_model_01.pkl")
 
+model = None
+
 def predict(features: dict):
 
-    # cargar modelo solo cuando se necesita
-    model = joblib.load(model_path)
+    global model
+
+    if model is None:
+        model = joblib.load(model_path)
 
     df = pd.DataFrame([features])
 
