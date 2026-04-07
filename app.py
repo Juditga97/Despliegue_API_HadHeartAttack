@@ -50,8 +50,8 @@ def predict_endpoint():
             "State": "California"
         }
 
-    result = predict(data)
-
-    return jsonify({
-        "prediction": result
-    })
+    try:
+        result = predict(data)
+        return jsonify({"prediction": result})
+    except Exception as e:
+        return jsonify({"error": str(e), "type": type(e).__name__}), 500
