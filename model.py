@@ -2,16 +2,13 @@ import joblib
 import pandas as pd
 import os
 
-# Obtener la ruta del directorio actual
 BASE_DIR = os.path.dirname(__file__)
-
-# Construir la ruta completa del modelo
 model_path = os.path.join(BASE_DIR, "heart_attack_model_01.pkl")
 
-# Cargar el modelo
-model = joblib.load(model_path)
-
 def predict(features: dict):
+
+    # cargar modelo solo cuando se necesita
+    model = joblib.load(model_path)
 
     df = pd.DataFrame([features])
 
