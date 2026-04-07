@@ -198,3 +198,5 @@ xlrd==2.0.2
 xxhash==3.6.0
 xyzservices==2025.11.0
 yarl==1.23.0
+gunicorn
+
