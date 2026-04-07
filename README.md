@@ -1,15 +1,3 @@
-## Prueba del endpoint /predict
-
-La API fue probada localmente con el siguiente comando:
-
-curl -X POST http://127.0.0.1:5000/predict \
--H "Content-Type: application/json" \
--d '{"Sex":"Male","AgeCategory":"Age 60-64","GeneralHealth":"Good","PhysicalHealthDays":0,"MentalHealthDays":0,"LastCheckupTime":"Within past year","PhysicalActivities":"Yes","SleepHours":7,"RemovedTeeth":"None","HadAngina":"No","HadStroke":"No","HadCOPD":"No","HadDiabetes":"No","HadKidneyDisease":"No","HadArthritis":"No","HadSkinCancer":"No","AlcoholDrinkers":"Yes","SmokerStatus":"Never smoked","DifficultyWalking":"No","DifficultyDressingBathing":"No","DifficultyErrands":"No","DeafOrHardOfHearing":"No","BlindOrVisionDifficulty":"No","DifficultyConcentrating":"No","WeightInKilograms":80,"CovidPos":"No","ChestScan":"No","PneumoVaxEver":"Yes","State":"California"}'
-
-{
-  "prediction": 0
-}
-
 ### Objetivo
 
 Desplegar un modelo mediante API REST en algún entorno accesible a través de una dirección pública de internet (se sugiere **Render** pero es completamente voluntario). 
