@@ -15,7 +15,7 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict_endpoint():
 
-    data = request.get_json()
+    data = request.get_json(silent=True)
 
     if not data:
         data = {
