@@ -57,7 +57,7 @@ def predict_endpoint():
             "State": "California"
         }
 
-    # Convertir numéricos (para GET)
+    # Convertir numéricos (IMPORTANTE para GET)
     numeric_fields = [
         "PhysicalHealthDays",
         "MentalHealthDays",
@@ -87,6 +87,6 @@ def predict_endpoint():
         }), 500
 
 
-# Para ejecutar en local
+# Solo para local
 if __name__ == "__main__":
     app.run(debug=True)
