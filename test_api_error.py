@@ -1,6 +1,6 @@
 import requests
 
-url = "https://TU-URL.onrender.com/predict"
+url = " https://despliegue-api-hadheartattack.onrender.com/predict"
 
 # Caso 1: vacío
 response = requests.post(url, json={})
