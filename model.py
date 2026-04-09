@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-model_path = os.path.join(BASE_DIR, "heart_attack_model_01.pkl")
+model_path = os.path.join(BASE_DIR, "heart_attack_model.pkl")
 
 model = None
 
